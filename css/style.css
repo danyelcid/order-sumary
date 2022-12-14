@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root{
+
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --bright-blue-shadow: rgba(56, 41, 224, 0.475);
+    --darker-bright-blue: hsl(239, 74%, 46%);
+
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+
+    --fw-medium: 500;
+    --fw-bold: 700;
+    --fw-black: 900;
+}
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html ,
+body{
+    font-size: 16px;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+body{
+    background: url('/images/pattern-background-desktop.svg') no-repeat var(--pale-blue);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    padding: 1rem;
+    color: var(--dark-blue);
+}
+main{
+    max-width: 28.125rem;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    position: relative;
+}
+main .img{
+    position: relative;
+    z-index: 0;
+}
+main .img::after{
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0;
+    width: 100%;
+    height: 2rem;
+    background-color: var(--darker-bright-blue);
+}
+
+.details{
+    position: relative;
+    top: -0.5rem;
+    padding: 3rem;
+    text-align: center;
+    line-height: 1;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.25rem;
+    z-index: 1;
+}
+
+.title{
+    font-weight: var(--fw-black);
+    margin-bottom: 1.5rem;
+}
+.description{
+    line-height: 1.5;
+    color: var(--desaturated-blue);
+    margin-bottom: 2rem;
+}
+.plan-selected{
+    padding: 1rem;
+    background-color: var(--very-pale-blue);
+    border-radius: .5rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 3rem auto auto;
+    align-items: center;
+}
+
+.plan-selected .plan
+{
+    text-align: left;
+    line-height: 1.5;
+}
+.action{
+    text-align: right;
+    line-height: 1.5;
+}
+
+.brn{
+    text-decoration: none;
+    margin: 2rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: var(--bright-blue);
+    color: var(--very-pale-blue);
+    font-weight: var(--fw-bold);
+    -webkit-box-shadow: 0 20px 20px  var(--bright-blue-shadow);
+    box-shadow: 0 20px 20px  var(--bright-blue-shadow);
+}
