@@ -4,8 +4,9 @@
 
     --pale-blue: hsl(225, 100%, 94%);
     --bright-blue: hsl(245, 75%, 52%);
+
     --bright-blue-shadow: rgba(56, 41, 224, 0.475);
-    --darker-bright-blue: hsl(239, 74%, 46%);
+    --darker-bright-blue: hsl(240, 74%, 46%);
 
     --very-pale-blue: hsl(225, 100%, 98%);
     --desaturated-blue: hsl(224, 23%, 55%);
@@ -31,22 +32,24 @@ body{
 }
 
 body{
-    background: url('/images/pattern-background-desktop.svg') no-repeat var(--pale-blue);
-    background-size: cover;
+    background: url('/images/pattern-background-desktop.svg') repeat-x var(--pale-blue);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-width: 100vw;
     min-height: 100vh;
-    padding: 1rem;
-    color: var(--dark-blue);
+    padding: 1.5rem;
+    color: var(--desaturated-blue);
 }
 main{
     max-width: 28.125rem;
     border-radius: 1.25rem;
     overflow: hidden;
     position: relative;
+}
+img{
+    width: 100%;
 }
 main .img{
     position: relative;
@@ -77,11 +80,11 @@ main .img::after{
 
 .title{
     font-weight: var(--fw-black);
+    color: var(--dark-blue);
     margin-bottom: 1.5rem;
 }
 .description{
     line-height: 1.5;
-    color: var(--desaturated-blue);
     margin-bottom: 2rem;
 }
 .plan-selected{
@@ -99,19 +102,69 @@ main .img::after{
     text-align: left;
     line-height: 1.5;
 }
+.plan .type{
+    color: var(--dark-blue);
+    font-weight: var(--fw-bold);
+}
 .action{
     text-align: right;
     line-height: 1.5;
+    color: var(--bright-blue);
 }
-
-.brn{
+.action:hover{
+    opacity: .7;
+    text-decoration: none;
+}
+.btn{
     text-decoration: none;
     margin: 2rem 0;
     padding: 1rem;
-    border-radius: .5rem;
+    border-radius: .75rem;
     background-color: var(--bright-blue);
     color: var(--very-pale-blue);
     font-weight: var(--fw-bold);
     -webkit-box-shadow: 0 20px 20px  var(--bright-blue-shadow);
     box-shadow: 0 20px 20px  var(--bright-blue-shadow);
+}
+.btn:hover{
+    opacity: .75;
+}
+.cancel{
+    text-decoration: none;
+    font-weight: var(--fw-bold);
+    color: var(--desaturated-blue);
+}
+.cancel:hover{
+    color: var(--dark-blue);
+}
+.attribution { 
+    font-size: 1rem; 
+    text-align: center;
+    font-weight: var(--fw-bold); 
+}
+.attribution a { color: var(--dark-blue); }
+
+@media screen and (max-width: 720px){
+    body{
+        background: url('/images/pattern-background-mobile.svg') repeat-x var(--pale-blue);
+    }
+    .details{
+        padding: 2.5rem 1.5rem 1.5rem;
+    }
+    .title{
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .description{
+        margin-bottom: 1.5rem;
+    }
+    .btn{
+        margin: 2rem 0;
+        -webkit-box-shadow: 0 .75rem .75rem  var(--bright-blue-shadow);
+        box-shadow: 0 .75rem .75rem  var(--bright-blue-shadow);
+    }
+
+    .attribution{
+        display: none;
+    }
 }
